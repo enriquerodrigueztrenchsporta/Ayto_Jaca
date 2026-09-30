@@ -1,6 +1,9 @@
 import { listNews } from "@/lib/queries/public";
 import { siteUrl } from "@/lib/env";
 
+// Se genera en cada petición (lee la base de datos).
+export const dynamic = "force-dynamic";
+
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 /** Canal RSS de noticias (se mantiene la URL /rss.xml de la web actual). */

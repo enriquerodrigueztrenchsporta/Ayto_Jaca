@@ -12,7 +12,19 @@ function createClient() {
   return new PrismaClient({ adapter, log: process.env.NODE_ENV === "development" ? ["warn", "error"] : [] });
 }
 
-/** Cliente Prisma único por proceso (evita agotar conexiones en desarrollo con HMR). */
-export const db: PrismaClient = globalForPrisma.prisma ?? createClient();
+function getClient(): PrismaClient {
+  globalForPrisma.prisma ??= createClient();
+  return globalForPrisma.prisma;
+}
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = db;
+/**
+ * Cliente Prisma único por proceso, creado de forma perezosa en la primera consulta.
+ * Así `next build` (p. ej. dentro de Docker, sin base de datos) no necesita DATABASE_URL.
+ */
+export const db: PrismaClient = new Proxy({} as PrismaClient, {
+  get(_target, prop) {
+    const client = getClient();
+    const value = Reflect.get(client, prop, client);
+    return typeof value === "function" ? value.bind(client) : value;
+  },
+});
