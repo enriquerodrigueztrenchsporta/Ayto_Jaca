@@ -155,7 +155,14 @@ async function seedContent() {
     const sede = p.sedeId ? SEDE_BY_ID.get(p.sedeId) : undefined;
     const requirements = sede?.requirements.length ? sede.requirements.map((r) => `- ${r}`).join("\n") : null;
     const requiresCertificate = !!sede?.requirements.some((r) => /certificado digital/i.test(r));
-    const description = p.description ?? (sede?.description ? sede.description.replace(/\n(?=[a-záéíóú,:])/g, " ").trim() : null);
+    // La descripción de la Sede repite a menudo la documentación y el modo de presentación, que tienen su propia sección.
+    const sedeIntro = sede?.description
+      ? sede.description
+          .split(/\n?(?:Se deberá adjuntar|Puede presentar este trámite|En caso de que desee presentarlo)/)[0]
+          .replace(/\n(?=[a-záéíóú,:])/g, " ")
+          .trim()
+      : "";
+    const description = p.description ?? (sedeIntro || null);
     const howToApply =
       p.howToApply ??
       (p.sedeId

@@ -126,14 +126,14 @@ export function SearchBox({
           }}
           className={cn(
             "w-full rounded-[6px] border border-stone-300 bg-white text-ink placeholder:text-muted focus:border-forest-700",
-            size === "lg" ? "h-16 pl-13 pr-36 text-lg" : "h-12 pl-11 pr-28 text-base",
+            size === "lg" ? "h-16 pl-12 pr-28 text-base sm:pl-13 sm:pr-36 sm:text-lg" : "h-12 pl-11 pr-28 text-base",
           )}
         />
         <button
           type="submit"
           className={cn(
             "absolute right-1.5 top-1/2 inline-flex -translate-y-1/2 items-center gap-2 rounded-[4px] bg-forest-700 font-semibold text-snow hover:bg-forest-600",
-            size === "lg" ? "h-13 px-5" : "h-9 px-4",
+            size === "lg" ? "h-13 px-4 sm:px-5" : "h-9 px-4",
           )}
         >
           {loading ? <Loader2 aria-hidden className="size-4 animate-spin" /> : null}
