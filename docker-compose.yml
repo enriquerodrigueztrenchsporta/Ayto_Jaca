@@ -1,0 +1,79 @@
+# ─────────────────────────────────────────────────────────────
+# Web Ayuntamiento de Jaca — servidor propio
+#
+#   docker compose up -d            → PostgreSQL + migraciones/seed + web
+#   docker compose logs -f app      → logs de la web
+#   docker compose run --rm migrate npm run admin:create   → crear usuario administrador
+#
+# Las credenciales se leen del archivo .env (NO se sube a Git; ver .env.example).
+# La web escucha solo en 127.0.0.1:${APP_PORT:-3000}; Nginx en el host publica 80/443.
+# PostgreSQL NO expone ningún puerto al exterior.
+# ─────────────────────────────────────────────────────────────
+name: ${COMPOSE_PROJECT_NAME:-ayto-jaca}
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
+x-database-url: &database-url
+  DATABASE_URL: postgresql://${POSTGRES_USER:-ayto}:${POSTGRES_PASSWORD:?Defina POSTGRES_PASSWORD en .env}@db:5432/${POSTGRES_DB:-ayto_jaca}?schema=public
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ayto}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Defina POSTGRES_PASSWORD en .env}
+      POSTGRES_DB: ${POSTGRES_DB:-ayto_jaca}
+      TZ: Europe/Madrid
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    logging: *logging
+
+  migrate:
+    build:
+      context: .
+      target: tools
+    image: ${COMPOSE_PROJECT_NAME:-ayto-jaca}-tools
+    env_file: .env
+    environment:
+      <<: *database-url
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+    logging: *logging
+
+  app:
+    build:
+      context: .
+      target: runner
+    image: ${COMPOSE_PROJECT_NAME:-ayto-jaca}-app
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      <<: *database-url
+      UPLOAD_DIR: /app/storage/uploads
+      TZ: Europe/Madrid
+    ports:
+      - "127.0.0.1:${APP_PORT:-3000}:3000"
+    volumes:
+      - uploads:/app/storage/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    logging: *logging
+
+volumes:
+  pgdata:
+  uploads:

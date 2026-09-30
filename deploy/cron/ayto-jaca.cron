@@ -1,0 +1,12 @@
+# ─────────────────────────────────────────────────────────────
+# Tareas programadas del servidor (instalar con: sudo cp deploy/cron/ayto-jaca.cron /etc/cron.d/ayto-jaca)
+# Sustituya /opt/ayto-jaca si instaló el proyecto en otra ruta y "deploy" por su usuario.
+# ─────────────────────────────────────────────────────────────
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Cada 10 minutos: publica lo programado y archiva lo caducado
+*/10 * * * * deploy cd /opt/ayto-jaca && set -a && . ./.env && set +a && curl -fsS -X POST -H "Authorization: Bearer ${CRON_SECRET}" "http://127.0.0.1:${APP_PORT:-3000}/api/cron/lifecycle" > /dev/null
+
+# Cada noche a las 3:30: copia de seguridad con rotación
+30 3 * * * deploy /opt/ayto-jaca/deploy/scripts/backup-db.sh >> /var/log/ayto-jaca/backup.log 2>&1
