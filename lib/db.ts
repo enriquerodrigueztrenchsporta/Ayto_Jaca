@@ -9,7 +9,7 @@ function createClient() {
     throw new Error("DATABASE_URL no está definida. Revise el archivo .env (ver .env.example).");
   }
   const adapter = new PrismaPg({ connectionString });
-  return new PrismaClient({ adapter, log: process.env.NODE_ENV === "development" ? ["warn", "error"] : ["error"] });
+  return new PrismaClient({ adapter, log: process.env.NODE_ENV === "development" ? ["warn", "error"] : [] });
 }
 
 /** Cliente Prisma único por proceso (evita agotar conexiones en desarrollo con HMR). */

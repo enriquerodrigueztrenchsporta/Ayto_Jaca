@@ -41,3 +41,20 @@ export function documentKindFromUrl(url: string): DocumentKind {
   if (/\.(jpe?g|png|webp|gif)$/.test(u)) return "IMAGE";
   return "LINK";
 }
+
+export const AUDIT_LABEL: Record<string, string> = {
+  CREATE: "Creado",
+  UPDATE: "Modificado",
+  PUBLISH: "Publicado",
+  SCHEDULE: "Programado",
+  ARCHIVE: "Archivado",
+  RESTORE: "Recuperado",
+  DELETE: "Eliminado",
+  LOGIN: "Inicio de sesión",
+  LOGIN_FAILED: "Intento de acceso fallido",
+  WEEKLY_SAVE: "Actualización semanal guardada",
+  WEEKLY_PUBLISH: "Actualización semanal publicada",
+  UPLOAD: "Archivo subido",
+  VERIFY: "Verificado",
+  SETTINGS: "Configuración",
+};
