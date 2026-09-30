@@ -9,8 +9,11 @@ import { PublicationStatus } from "@/components/admin/PublicationStatus";
 import { formatDate, formatDateTime } from "@/lib/dates";
 import { db } from "@/lib/db";
 import type { Publishable } from "@/lib/content/visibility";
+import { isStale, VERIFY_DAYS } from "@/lib/admin/dashboard";
 
-type Props = { params: Promise<{ resource: string; id: string }> };
+type Props = { params: Promise<{ resource: string; id: string }>; searchParams: Promise<Record<string, string | undefined>> };
+
+const SAVED: Record<string, string> = { draft: "Borrador guardado.", publish: "Publicado. Ya es visible en la web.", save: "Cambios guardados." };
 
 export async function generateMetadata({ params }: Props) {
   const { resource: key } = await params;
@@ -18,9 +21,9 @@ export async function generateMetadata({ params }: Props) {
   return { title: r ? `Editar ${r.singular}` : "Editar" };
 }
 
-const VERIFY_DAYS = 90;
 
-export default async function EditResourcePage({ params }: Props) {
+export default async function EditResourcePage({ params, searchParams }: Props) {
+  const saved = (await searchParams).guardado;
   const { resource: key, id } = await params;
   const resource = getResource(key);
   if (!resource) notFound();
@@ -28,7 +31,7 @@ export default async function EditResourcePage({ params }: Props) {
   if (!item) notFound();
   const history = await db.auditLog.findMany({ where: { entityType: resource.model, entityId: id }, orderBy: { createdAt: "desc" }, take: 8 });
   const lastVerified = item.lastVerifiedAt as Date | null | undefined;
-  const stale = resource.fields.some((f) => f.name === "lastVerifiedAt") && (!lastVerified || Date.now() - lastVerified.getTime() > VERIFY_DAYS * 86400000);
+  const stale = resource.fields.some((f) => f.name === "lastVerifiedAt") && isStale(lastVerified);
   const publicHref = resource.publicPath?.(item);
 
   return (
@@ -62,6 +65,7 @@ export default async function EditResourcePage({ params }: Props) {
         initialValues={toFormValues(resource, item)}
         lookups={await loadLookups()}
         status={resource.publishable ? (item.status as "DRAFT") : undefined}
+        initialMessage={saved ? (SAVED[saved] ?? null) : null}
         previewHref={resource.publishable ? `/preview/${PREVIEW_TYPE[resource.model]}/${id}` : null}
       />
       {history.length > 0 && (

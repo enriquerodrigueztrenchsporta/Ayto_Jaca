@@ -3,6 +3,9 @@ import { db } from "@/lib/db";
 import { publishedWhere } from "@/lib/content/visibility";
 import { siteUrl } from "@/lib/env";
 
+// Se genera en cada petición: depende de la BD y de NEXT_PUBLIC_DEMO_MODE en tiempo de ejecución.
+export const dynamic = "force-dynamic";
+
 const STATIC = [
   "", "/tramites", "/actualidad", "/actualidad/noticias", "/avisos", "/agenda", "/plenos", "/convocatorias", "/empleo-publico",
   "/ayuntamiento", "/ayuntamiento/corporacion", "/ayuntamiento/organizacion", "/ayuntamiento/areas", "/contacto",

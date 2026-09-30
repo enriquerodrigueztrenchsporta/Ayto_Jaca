@@ -39,8 +39,8 @@ export function HeaderSearch() {
         className="inline-flex min-h-11 items-center gap-2 rounded-[4px] px-3 font-semibold text-forest-900 hover:bg-stone-100"
       >
         <Search aria-hidden className="size-5" />
-        <span className="hidden sm:inline xl:hidden 2xl:inline">Buscar</span>
-        <span className="sr-only sm:hidden">Buscar en la web</span>
+        <span className="hidden sm:inline xl:hidden 2xl:inline" aria-hidden>Buscar</span>
+        <span className="sr-only">Buscar en la web</span>
       </button>
       {open && (
         <div role="dialog" aria-modal="true" aria-label="Buscar en la web" className="fixed inset-0 z-50 bg-forest-900/60" onMouseDown={(e) => e.target === e.currentTarget && setOpen(false)}>

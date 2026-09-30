@@ -99,7 +99,7 @@ export default async function DashboardPage() {
                 <li key={s.href} className="py-2.5">
                   <Link href={s.href} className="font-semibold text-forest-700 hover:underline">{s.title}</Link>
                   <p className="text-sm text-important">
-                    {s.type} · {s.lastVerifiedAt ? `Este dato no se verifica desde hace ${Math.floor((Date.now() - s.lastVerifiedAt.getTime()) / 86400000)} días` : "Sin fecha de verificación"}
+                    {s.type} · {s.days !== null ? `Este dato no se verifica desde hace ${s.days} días` : "Sin fecha de verificación"}
                   </p>
                 </li>
               ))}

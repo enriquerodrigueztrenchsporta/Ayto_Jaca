@@ -19,6 +19,7 @@ type Props = {
   lookups: Lookups;
   status?: "DRAFT" | "SCHEDULED" | "PUBLISHED" | "ARCHIVED";
   previewHref?: string | null;
+  initialMessage?: string | null;
 };
 
 const GROUPS: Array<{ key: NonNullable<Field["group"]>; title: string; description?: string }> = [
@@ -29,11 +30,11 @@ const GROUPS: Array<{ key: NonNullable<Field["group"]>; title: string; descripti
 ];
 
 /** Formulario genérico de edición, dirigido por la configuración del recurso. */
-export function EditorForm({ resourceKey, id, initialValues, lookups, status, previewHref }: Props) {
+export function EditorForm({ resourceKey, id, initialValues, lookups, status, previewHref, initialMessage }: Props) {
   const resource = getResource(resourceKey)!;
   const router = useRouter();
   const [pending, start] = useTransition();
-  const [msg, setMsg] = useState<{ tone: "ok" | "error"; text: string } | null>(null);
+  const [msg, setMsg] = useState<{ tone: "ok" | "error"; text: string } | null>(initialMessage ? { tone: "ok", text: initialMessage } : null);
   const [confirm, setConfirm] = useState<null | "delete" | "archive">(null);
   const methods = useForm<FormValues>({ defaultValues: initialValues, resolver: zodResolver(formSchema(resource)) as never, mode: "onBlur" });
   const isLive = status === "PUBLISHED" || status === "SCHEDULED";
@@ -51,7 +52,7 @@ export function EditorForm({ resourceKey, id, initialValues, lookups, status, pr
           }
           setMsg({ tone: "ok", text: res.message ?? "Guardado." });
           methods.reset(values);
-          if (!id && res.data) router.replace(`/admin/${resourceKey}/${res.data.id}?guardado=1`);
+          if (!id && res.data) router.replace(`/admin/${resourceKey}/${res.data.id}?guardado=${intent}`);
           else router.refresh();
         }),
       () => setMsg({ tone: "error", text: "Revisa los campos marcados en rojo." }),

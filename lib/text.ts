@@ -24,7 +24,8 @@ export function truncate(text: string, max = 180): string {
   const clean = text.replace(/\s+/g, " ").trim();
   if (clean.length <= max) return clean;
   const cut = clean.slice(0, max);
-  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,.;:]$/, "") + "…";
+  const atBoundary = clean[max] === " ";
+  return (atBoundary ? cut : cut.slice(0, cut.lastIndexOf(" "))).replace(/[,.;:]$/, "") + "…";
 }
 
 /** Quita marcas de markdown básicas para extractos. */

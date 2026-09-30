@@ -35,13 +35,10 @@ export function fieldSchema(f: Field): z.ZodTypeAny {
       return f.required ? dateTimeOrEmpty.refine((v) => v !== "", REQUIRED) : dateTimeOrEmpty;
     case "number":
       return z.string().refine((v) => v === "" || /^-?\d+$/.test(v), "Debe ser un número entero.");
-    case "text":
-      if (f.name === "url") {
-        const s = internalOrUrl;
-        return f.required ? s.refine((v) => v !== "", REQUIRED) : s;
-      }
-    // eslint-disable-next-line no-fallthrough
     default: {
+      if (f.type === "text" && f.name === "url") {
+        return f.required ? internalOrUrl.refine((v) => v !== "", REQUIRED) : internalOrUrl;
+      }
       let s = z.string().trim().max(f.max ?? 40000, `Máximo ${f.max ?? 40000} caracteres.`);
       if (f.required) s = s.min(1, REQUIRED);
       return s;

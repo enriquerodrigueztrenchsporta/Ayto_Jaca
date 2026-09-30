@@ -15,7 +15,7 @@ export function renderMarkdown(md: string | null | undefined): string {
       "p", "br", "strong", "em", "b", "i", "u", "a", "ul", "ol", "li", "h2", "h3", "h4",
       "blockquote", "hr", "table", "thead", "tbody", "tr", "th", "td", "caption", "code", "pre", "abbr",
     ],
-    allowedAttributes: { a: ["href", "title"], th: ["scope"], abbr: ["title"] },
+    allowedAttributes: { a: ["href", "title", "rel", "target"], th: ["scope"], abbr: ["title"] },
     allowedSchemes: ["http", "https", "mailto", "tel"],
     transformTags: {
       a: (tagName, attribs) => {

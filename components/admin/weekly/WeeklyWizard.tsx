@@ -130,7 +130,7 @@ export function WeeklyWizard({ weeklyId, initial, lookups, candidates, locked, c
             )}
 
             {current.kind === "week" && <WeekStep />}
-            {current.kind === "collection" && <CollectionStepView step={current} locked={locked} />}
+            {current.kind === "collection" && <CollectionStepView key={current.id} step={current} locked={locked} />}
             {current.kind === "featured" && <FeaturedStep candidates={candidates} />}
             {current.kind === "review" && (
               <div className="space-y-6">

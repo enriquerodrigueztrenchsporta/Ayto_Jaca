@@ -5,6 +5,15 @@ import { listActiveAlerts, listUpcomingEvents } from "@/lib/queries/public";
 
 export const VERIFY_DAYS = 90;
 
+/** Días transcurridos desde una fecha (para avisos de verificación). */
+export function daysSince(date: Date, now: Date = new Date()): number {
+  return Math.floor((now.getTime() - date.getTime()) / 86400000);
+}
+
+export function isStale(lastVerifiedAt: Date | null | undefined, now: Date = new Date()): boolean {
+  return !lastVerifiedAt || daysSince(lastVerifiedAt, now) > VERIFY_DAYS;
+}
+
 /** Indicadores del resumen semanal del panel. */
 export async function weekStats(now: Date = new Date()) {
   const weekStart = startOfWeek(now);
@@ -61,5 +70,7 @@ export async function staleItems(now: Date = new Date(), take = 12) {
     ...procedures.map((p) => ({ href: `/admin/tramites/${p.id}`, title: p.title, type: "Trámite", lastVerifiedAt: p.lastVerifiedAt })),
     ...areas.map((a) => ({ href: `/admin/areas/${a.id}`, title: a.name, type: "Contacto", lastVerifiedAt: a.lastVerifiedAt })),
     ...grants.map((g) => ({ href: `/admin/convocatorias/${g.id}`, title: g.title, type: "Subvención", lastVerifiedAt: g.lastVerifiedAt })),
-  ].slice(0, take);
+  ]
+    .slice(0, take)
+    .map((s) => ({ ...s, days: s.lastVerifiedAt ? daysSince(s.lastVerifiedAt, now) : null }));
 }
