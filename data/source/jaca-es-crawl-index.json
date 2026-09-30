@@ -1,0 +1,1431 @@
+{
+ "crawledAt": "2026-09-30",
+ "source": "https://www.jaca.es/",
+ "pages": [
+  {
+   "url": "https://www.jaca.es/agenda_urbana_de_jaca",
+   "title": "JACA, UNA CIUDAD SOSTENIBLE. PARTICIPA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda_21_local/diagnostico-bloque-i-presentacion-del-municipio.html",
+   "title": "DIAGNÓSTICO.- BLOQUE I. PRESENTACIÓN DEL MUNICIPIO.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda_21_local/diagnostico-bloque-ii-aspectos-estructurales.html",
+   "title": "DIAGNÓSTICO.- BLOQUE II. ASPECTOS ESTRUCTURALES",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda_21_local/diagnostico-bloque-iii-vectores-ambientales.html",
+   "title": "DIAGNÓSTICO.- BLOQUE III. VECTORES AMBIENTALES.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda_21_local/diagnostico-documentos-de-sintesis.html",
+   "title": "DIAGNÓSTICO.- DOCUMENTOS DE SÍNTESIS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda_21_local/diagnostico-indice-general.html",
+   "title": "DIAGNÓSTICO.- ÍNDICE GENERAL",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda_21_local/plan-de-accion-local.html",
+   "title": "PLAN DE ACCIÓN LOCAL",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda_21_local/plan-de-participacion-ciudadana.html",
+   "title": "PLAN DE PARTICIPACIÓN CIUDADANA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda_21_local/plan-de-seguimiento.html",
+   "title": "PLAN DE SEGUIMIENTO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/agenda-21-local.html",
+   "title": "Agenda 21 Local",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/archivo-municipal.html",
+   "title": "Archivo Municipal",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/archivo-municipal.html?page=1",
+   "title": "Archivo Municipal",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/archivo-municipal/busquedas.html",
+   "title": "BÚSQUEDAS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/archivo-municipal/el-libro-de-la-cadena.html",
+   "title": "EL LIBRO DE LA CADENA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/archivo-municipal/fondos.html",
+   "title": "FONDOS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/archivo-municipal/historia-del-archivo.html",
+   "title": "HISTORIA DEL ARCHIVO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/archivo-municipal/servicios.html",
+   "title": "SERVICIOS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente.html",
+   "title": "Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/abril.html",
+   "title": "ABRIL - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/agosto.html",
+   "title": "AGOSTO - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/diciembre.html",
+   "title": "DICIEMBRE - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/enero.html",
+   "title": "ENERO - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/febrero.html",
+   "title": "FEBRERO - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/julio.html",
+   "title": "JULIO - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/junio.html",
+   "title": "JUNIO - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/marzo.html",
+   "title": "MARZO - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/mayo.html",
+   "title": "MAYO - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/noviembre.html",
+   "title": "NOVIEMBRE - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/octubre.html",
+   "title": "OCTUBRE - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/calendario-del-contribuyente/septiembre.html",
+   "title": "SEPTIEMBRE - Calendario del Contribuyente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/escuela-infantil-municipal.html",
+   "title": "Escuela Infantil Municipal Cervatillos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/gobierno.html",
+   "title": "Gobierno - Organización municipal",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/huertos-sociales",
+   "title": "Convocatoria para la nueva adjudicación de los huertos sociales del municipio de Jaca (año 2021)",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/impresos-y-solicitudes.html",
+   "title": "IMPRESOS Y SOLICITUDES",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal.html",
+   "title": "Normativa Municipal",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal.html?page=1",
+   "title": "Normativa Municipal",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal/adjudicacion-viviendas-de-promocion-publica-de-titularidad",
+   "title": "Adjudicación Viviendas de Promoción Pública de Titularidad municipal en régimen de alquiler",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal/area-rehabilitacion-integral-casco-y-barrio-la-paz.html",
+   "title": "AREA REHABILITACION INTEGRAL CASCO Y BARRIO LA PAZ",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal/auto-taxis.html",
+   "title": "AUTO-TAXIS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal/medidas-fomento-rehabilitacion-patrimonio-nucleos.html",
+   "title": "MEDIDAS FOMENTO REHABILITACION PATRIMONIO NUCLEOS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal/municipal-de-trafico-y-circulacion-de-vehiculos.html",
+   "title": "Municipal de trafico y circulación de vehículos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal/plan-de-medidas-antifraude.html",
+   "title": "Plan de medidas antifraude",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/normativa-municipal/protocolo-para-la-prevencion-del-acoso-laboral-en-el-excmo-ayuntami",
+   "title": "Protocolo para la prevención del acoso laboral en el Excmo. Ayuntamiento de Jaca",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=1",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=109",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=2",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=3",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=4",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=5",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=6",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=7",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/noticias.html?page=8",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/oficina-consumidor.html",
+   "title": "Oficina del consumidor",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/plan-general-de-ordenacion-urbana.html",
+   "title": "Urbanismo, Obras, Servicios y Medio Ambiente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/plan-general-de-ordenacion-urbana.html?page=1",
+   "title": "Urbanismo, Obras, Servicios y Medio Ambiente",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/plan-general-de-ordenacion-urbana/apertura-actividades-inocuas.html",
+   "title": "Apertura actividades inocuas",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/plan-general-de-ordenacion-urbana/comunicacion-previa-obras-menores.html",
+   "title": "Comunicación Previa Obras Menores",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/plan-general-de-ordenacion-urbana/declaracion-de-interes-social-de-edificacion-para-bor",
+   "title": "Declaración de interés social de edificación para borda de comida altoaragonesa en la pardina de Fraginal",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/plan-general-de-ordenacion-urbana/ordenanza-municipal-reguladora-de-la-adjudicacion-y",
+   "title": "Ordenanza municipal reguladora de la adjudicación y funcionamiento de los huertos sociales",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/policia-local.html",
+   "title": "Policía Local",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/policia-local.html?page=1",
+   "title": "Policía Local",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/policia-local/denuncias-de-trafico.html",
+   "title": "DENUNCIAS DE TRÁFICO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/policia-local/mercado-semanal-ambulante.html",
+   "title": "",
+   "status": 503
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/policia-local/policia-local-de-jaca.html",
+   "title": "",
+   "status": 503
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/policia-local/servicio-de-grua.html",
+   "title": "",
+   "status": 503
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/policia-local/zonas-peatonales-y-zonas-de-estacionamiento.html",
+   "title": "",
+   "status": 503
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/recursos-humanos.html",
+   "title": "Recursos humanos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/recursos-humanos.html?page=1",
+   "title": "Recursos humanos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/recursos-humanos/convocatoria-de-concurso-oposicion-de-una-plaza-de-administrativo.html",
+   "title": "CONVOCATORIA DE CONCURSO-OPOSICIÓN DE UNA PLAZA DE ADMINISTRATIVO.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/recursos-humanos/convocatoria-de-concurso-oposicion-de-una-plaza-de-auxiliar-administra",
+   "title": "CONVOCATORIA DE CONCURSO-OPOSICIÓN DE UNA PLAZA DE AUXILIAR ADMINISTRATIVO.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/recursos-humanos/convocatoria-de-concurso-oposicion-para-la-cobertura-con-caracter-fijo",
+   "title": "CONVOCATORIA DE CONCURSO-OPOSICIÓN PARA LA COBERTURA CON CARÁCTER FIJO DE UNA PLAZA DE PROFESOR DE GUITARRA.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/recursos-humanos/convocatoria-de-concurso-oposicion-para-la-provision-de-una-plaza-d-14",
+   "title": "CONVOCATORIA DE CONCURSO-OPOSICIÓN PARA LA PROVISIÓN DE UNA PLAZA DE OPERARIO DE LA BRIGADA DE OBRAS Y SERVICIOS.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/recursos-humanos/convocatoria-para-la-seleccion-de-diez-alumnos-del-programa-de-cualifi",
+   "title": "CONVOCATORIA PARA LA SELECCIÓN DE DIEZ ALUMNOS DEL PROGRAMA DE CUALIFICACIÓN INICIAL DE OPERARIO FORESTAL, CURSO 2026/2027.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/subvenciones.html",
+   "title": "Subvenciones",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/subvenciones.html?page=1",
+   "title": "Subvenciones",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/subvenciones/convocatoria-de-subvenciones-para-familias-con-hijosas-nacidosas-de-partos",
+   "title": "CONVOCATORIA DE SUBVENCIONES PARA FAMILIAS CON HIJOS/AS NACIDOS/AS DE PARTOS MÚLTIPLES O PROCEDENTES DE UNA ADOPCIÓN MÚLTIPLE DEL 2025-2026",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/subvenciones/convocatoria-de-subvenciones-personas-fisicas-entidades-y-asociaciones-s-6",
+   "title": "CONVOCATORIA DE SUBVENCIONES A PERSONAS FÍSICAS, ENTIDADES Y ASOCIACIONES SIN ÁNIMO DE LUCRO DEL MUNICIPIO DE JACA PARA LA REALIZACIÓN DE ACTIVIDADES DEPORTIVAS EN EL AÑO 2026",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/subvenciones/convocatoria-para-la-concesion-de-ayudas-personas-afectadas-por-la-enfer-0",
+   "title": "CONVOCATORIA PARA LA CONCESIÓN DE AYUDAS A PERSONAS AFECTADAS POR LA ENFERMEDAD DE LA CELIAQUÍA O INTOLERANCIA AL GLUTEN PARA EL AÑO 2026",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/subvenciones/convocatoria-publica-de-subvenciones-entidades-y-asociaciones-sin-animo--0",
+   "title": "CONVOCATORIA PÚBLICA DE SUBVENCIONES A ENTIDADES Y ASOCIACIONES SIN ÁNIMO DE LUCRO DEL MUNICIPIO DE JACA, PARA LA REALIZACIÓN DE ACTIVIDADES CULTURALES PARA EL AÑO 2026",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/subvenciones/convocatoria-subvenciones-asociaciones-del-municipio-de-jaca-en-materia-de",
+   "title": "CONVOCATORIA SUBVENCIONES A ASOCIACIONES DEL MUNICIPIO DE JACA EN MATERIA DE ACCIÓN SOCIAL DEL AÑO 2026",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/tesoreria.html",
+   "title": "Tesorería",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/tesoreria/carta-de-domiciliacion.html",
+   "title": "CARTA DE DOMICILIACIÓN",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/tesoreria/declaracion-de-iivtnu-plusvalia.html",
+   "title": "Declaración de IIVTNU - Plusvalía",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/tesoreria/ficha-de-terceros.html",
+   "title": "FICHA DE TERCEROS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ayuntamiento/tesoreria/informacion-factura-electronica.html",
+   "title": "INFORMACION FACTURA ELECTRONICA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/buzon-de-sugerencias.html",
+   "title": "Buzón de sugerencias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/calendar/2026-09",
+   "title": "Calendario",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/asociaciones.html",
+   "title": "Asociaciones",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/asociaciones/asociacion-cultural-el-camino-del-santo-grial.html",
+   "title": "ASOCIACION CULTURAL EL CAMINO DEL SANTO GRIAL",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/asociaciones/asociacion-cultural-sancho-ramirez.html",
+   "title": "ASOCIACIÓN CULTURAL SANCHO RAMÍREZ",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/asociaciones/hermandad-de-san-juan-de-la-pena.html",
+   "title": "HERMANDAD DE SAN JUAN DE LA PEÑA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/instalaciones-municipales.html",
+   "title": "INSTALACIONES MUNICIPALES",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/introduccion.html",
+   "title": "INTRODUCCIÓN",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/peatonalizacion.html",
+   "title": "PEATONALIZACIÓN,  DESARROLLO   y  CIUDAD DE FUTURO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/plazas-y-rincones.html",
+   "title": "Plazas y Rincones",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/transporte-urbano.html",
+   "title": "",
+   "status": 504
+  },
+  {
+   "url": "https://www.jaca.es/ciudad/zonas-wifi.html",
+   "title": "",
+   "status": 504
+  },
+  {
+   "url": "https://www.jaca.es/ciudadanos.html",
+   "title": "Buzón de sugerencias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/consejo-ciudadano.html",
+   "title": "CONSEJO CIUDADANO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/consejo-de-salud.html",
+   "title": "CONSEJO MUNICIPAL DE SALUD",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/consejo-escolar-municipal.html",
+   "title": "CONSEJO ESCOLAR MUNICIPAL",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/consejo-local-del-deporte-y-la-actividad-fisica.html",
+   "title": "CONSEJO LOCAL DEL DEPORTE Y LA ACTIVIDAD FÍSICA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/consejo-sectorial-de-fiestas.html",
+   "title": "CONSEJO SECTORIAL DE FIESTAS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/consejo-sectorial-de-medio-ambiente.html",
+   "title": "CONSEJO SECTORIAL DE MEDIO AMBIENTE",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/consulta-publica-modificacion-ordenanzas.html",
+   "title": "Consulta publica modificación ordenanzas.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/consulta-publica-modificacion-reglamentos.html",
+   "title": "Consulta Pública Modificación Reglamentos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/creditos.html",
+   "title": "Créditos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura.html",
+   "title": "Cultura",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/agenda.html",
+   "title": "Agenda",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/asociaciones-culturales.html",
+   "title": "Asociaciones culturales",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/casa-de-la-cultura.html",
+   "title": "Casa de la cultura",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/casino-de-jaca.html",
+   "title": "Casino de Jaca",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/centro-cultural-la-paz.html",
+   "title": "Centro cultural la Paz",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/educacion.html",
+   "title": "Educación",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/educacion.html?page=1",
+   "title": "Educación",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/educacion/ceip-monte-oroel.html",
+   "title": "CEIP Monte Oroel",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/educacion/ceip-san-juan-de-la-pena.html",
+   "title": "CEIP San Juan de la Peña",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/educacion/cepa-jacetania.html",
+   "title": "CEPA Jacetania",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/educacion/colegio-escuelas-pias.html",
+   "title": "Colegio Escuelas Pías",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/educacion/escuela-municipal-infantil.html",
+   "title": "Escuela Municipal Infantil",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica.html",
+   "title": "Escuela municipal de música",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/actividades.html",
+   "title": "Actividades",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/bonificaciones-becas-y-alquileres.html",
+   "title": "Bonificaciones, Becas y Alquileres",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/calendario-escolar.html",
+   "title": "Calendario escolar",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/condiciones-de-admision-y-matricula.html",
+   "title": "Condiciones de admisión y matrícula",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/criterios-de-evaluacion-y-programaciones.html",
+   "title": "Criterios de evaluación y programaciones",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/direccion-departamentos-y-tutorias.html",
+   "title": "DIRECCIÓN, DEPARTAMENTOS Y TUTORÍAS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/enlaces.html",
+   "title": "Enlaces",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/escuela-de-musica-plazo-solicitud-beneficios-fiscales-del-curso-2526.html",
+   "title": "ESCUELA DE MÚSICA: PLAZO SOLICITUD BENEFICIOS FISCALES DEL CURSO 25.26",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/escuela-de-musica-xxvi-ciclo-jaca-monumental-traves-de-la-musica.html-0",
+   "title": "ESCUELA DE MÚSICA: MATRÍCULA CURSO 26.27",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/evaluacion-y-fechas-de-examenes.html",
+   "title": "Evaluación y fechas de exámenes",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/historia.html",
+   "title": "Historia",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/horarios-provisionales-por-materias.html",
+   "title": "Horarios provisionales por materias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/musica-para-bebes-e-iniciacion-musical.html",
+   "title": "MÚSICA PARA BEBÉS e INICIACIÓN MUSICAL",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/oferta-educativa-especialidades.html",
+   "title": "OFERTA EDUCATIVA-ESPECIALIDADES",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/proyecto-de-centro.html",
+   "title": "PROYECTO DE CENTRO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/secretaria-y-contacto.html",
+   "title": "SECRETARÍA Y CONTACTO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/tasas-y-precios-publicos.html",
+   "title": "Tasas y Precios públicos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/escuela-de-musica/ubicacion-e-instalaciones.html",
+   "title": "UBICACIÓN E INSTALACIONES",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/festivales.html",
+   "title": "Festivales",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/festivales/festival-folklorico-de-los-pirineos.html",
+   "title": "FESTIVAL FOLKLÓRICO DE LOS PIRINEOS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/festivales/festival-multidisciplinar-de-cultura-contemporanea-nucleo.html",
+   "title": "Festival multidisciplinar de cultura contemporánea NÚCLEO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/fiestas-y-tradiciones.html",
+   "title": "Fiestas y Tradiciones",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/fiestas-y-tradiciones/dia-del-arbol-en-jaca-2025.html",
+   "title": "Día del Árbol en Jaca 2025",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/fiestas-y-tradiciones/festividad-de-santa-orosia-y-san-pedro.html",
+   "title": "Festividad de Santa Orosia y San Pedro",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/fiestas-y-tradiciones/fiesta-del-primer-viernes-de-mayo-en-jaca.html",
+   "title": "Fiesta del Primer Viernes de Mayo en Jaca",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/fiestas-y-tradiciones/la-semana-santa.html",
+   "title": "La Semana Santa",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/hermanamientos.html",
+   "title": "Hermanamientos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/hermanamientos/hermanamientos.html",
+   "title": "Hermanamientos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/hermanamientos/oloron-ste-marie-agenda-de-actividades-del-verano.html",
+   "title": "Oloron-Ste Marie: Agenda de actividades del verano",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/hermanamientos/oloron-ste-marie-jueves-23-de-julio-de-montmartre-oloron.html",
+   "title": "Oloron-Ste Marie. Jueves 23 de julio. \"De Montmartre à Oloron\"",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/hermanamientos/oloron-ste-marie-viernes-24-de-julio-partir-de-las-2000-h-marche-de-nuit",
+   "title": "Oloron-Ste Marie. Viernes 24 de julio.  a partir de las 20.00 h. MARCHÉ DE NUIT BARTHOU. Animado  por la  Banda LES ROGER'S",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/hermanamientos/oloron-ste-mariedel-10-al-14-de-julio-fiestas-de-oloron.html",
+   "title": "Oloron-Ste MarieDel 10 al 14 de julio. Fiestas de Oloron.",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/historia-de-jaca.html",
+   "title": "HISTORIA DE JACA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/juventud.html",
+   "title": "Juventud",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/noticias.html",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/noticias.html?page=1",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/noticias.html?page=2",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/noticias.html?page=3",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/noticias.html?page=4",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/noticias.html?page=5",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/noticias.html?page=6",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/santiago.html",
+   "title": "Camino de Santiago",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/santiago/albergue-de-peregrinos-del-camino-de-santiago-y-santo-grial-con-credencial.html",
+   "title": "Albergue de Peregrinos del Camino de Santiago y Santo Grial con credencial",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/cultura/santiago/jaca-y-el-camino-de-santiago.html",
+   "title": "Jaca y el Camino de Santiago",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte.html",
+   "title": "Deporte",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/agenda.html",
+   "title": "Agenda",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/clubes.html",
+   "title": "Clubes deportivos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/clubes.html?page=1",
+   "title": "Clubes deportivos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/clubes/club-arquers-de-chaca.html",
+   "title": "CLUB ARQUERS DE CHACA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/clubes/club-atletico-oroel.html",
+   "title": "CLUB ATLÉTICO OROEL",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/clubes/club-atletismo-jaca.html",
+   "title": "CLUB ATLETISMO JACA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/clubes/club-baloncesto-jaca.html",
+   "title": "CLUB BALONCESTO JACA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/clubes/club-ciclista-mayencos.html",
+   "title": "CLUB CICLISTA MAYENCOS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/instalaciones.html",
+   "title": "Instalaciones deportivas",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/instalaciones/gimnasio-la-paz.html",
+   "title": "GIMNASIO LA PAZ",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/instalaciones/pabellon-de-hielo.html",
+   "title": "PABELLÓN DE HIELO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/instalaciones/polideportivo-barrio-norte.html",
+   "title": "POLIDEPORTIVO BARRIO NORTE",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/instalaciones/polideportivo-escolar-san-juan-de-la-pena.html",
+   "title": "POLIDEPORTIVO ESCOLAR SAN JUAN DE LA PEÑA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/instalaciones/polideportivo-municipal-olimpia.html",
+   "title": "POLIDEPORTIVO MUNICIPAL OLIMPIA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/deporte/noticias.html",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/institucional/destacados/cuidamos-jaca.html",
+   "title": "Cuidamos Jaca",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/institucional/destacados/disfrutamos-de-jaca-sin-dejar-rastro.html",
+   "title": "Disfrutamos de jaca sin dejar rastro",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/institucional/destacados/informacion-sobre-contadores.html",
+   "title": "Información sobre contadores",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/institucional/destacados/movilidad-urbana-pmus-y-ordenanza.html",
+   "title": "Movilidad Urbana (PMUS y Ordenanza)",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/institucional/destacados/nace-jaca-pirineos-bikeland.html",
+   "title": "Nace JACA PIRINEOS BIKELAND",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/institucional/destacados/sendero-de-los-miradores.html",
+   "title": "Sendero de los Miradores",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-01-28/jaca-premiara-sus-mejores-deportistas-en-una-gala-que-tambien-apostara-por-la-cu",
+   "title": "Jaca premiará a sus mejores deportistas en una gala que también apostará por la cultura y el talento jacetano",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-04-08/llega-jaca-el-contento-fest-un-evento-al-aire-libre-con-musica-gastronomia-y-zon",
+   "title": "Llega a Jaca el ‘Contento Fest’, un evento al aire libre con música, gastronomía y zona infantil",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-04-15/jaca-se-llenara-de-libros-autores-y-actividades-para-celebrar-san-jorge-y-el-dia",
+   "title": "Jaca se llenará de libros, autores y actividades para celebrar San Jorge y el Día del Libro",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-08-05/la-feria-del-libro-de-jaca-que-se-celebra-del-14-al-17-de-agosto-contara-con-mas",
+   "title": "La Feria del Libro de Jaca, que se celebra del 14 al 17 de agosto, contará con más de 70 autores",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-08-12/vuelos-nocturnos-que-salvan-vidas.html",
+   "title": "",
+   "status": 504
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-09-29/jaca-celebra-el-gran-exito-de-reino-y-leyenda-declarada-de-interes-turistico-de-",
+   "title": "Jaca celebra el gran éxito de ‘Reino y Leyenda’, declarada de Interés Turístico de Aragón",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-10-01/escuela-de-musica-matriculacion-curso-2627.html",
+   "title": "ESCUELA DE MÚSICA: MATRICULACIÓN CURSO 26.27",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-10-17/jaca-celebra-halloween-con-actividades-para-todos-los-publicos.html",
+   "title": "Jaca celebra Halloween con actividades para todos los públicos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-10-17/recepcion-las-campeonas-europeas-de-futbol-americano.html",
+   "title": "Recepción a las campeonas europeas de fútbol americano",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-10-28/jaca-celebra-la-segunda-edicion-del-mes-de-la-montana.html",
+   "title": "Jaca celebra la segunda edición del Mes de la Montaña",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-10-29/montaneras-adeban-celebra-en-jaca-las-ix-jornadas-mujer-y-montana.html",
+   "title": "Montañeras Adebán celebra en Jaca las IX Jornadas ‘Mujer y Montaña’",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-11-01/escuela-de-musicaplazo-solicitud-beneficios-fiscales-2526.html",
+   "title": "ESCUELA DE MÚSICA:PLAZO SOLICITUD BENEFICIOS FISCALES 25.26",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2025-11-06/jaca-presenta-la-ruta-de-los-bancos-gigantes-una-nueva-propuesta-para-descubrir-",
+   "title": "Jaca presenta la Ruta de los Bancos Gigantes, una nueva propuesta para descubrir las distintas caras del monte Oroel",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2026-01-16/la-actividad-cultural-continua-en-jaca-tras-unas-exitosas-navidades.html",
+   "title": "La actividad cultural continua en Jaca tras unas exitosas navidades",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2026-02-06/la-primera-edicion-del-torneo-jaca-pirineos-futbol-cup-congregara-mas-de-1000-de",
+   "title": "La primera edición del torneo ‘Jaca-Pirineos Fútbol Cup’ congregará a más de 1.000 deportistas",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2026-02-26/jaca-lidera-el-proyecto-europeo-fortium-para-crear-una-red-transfronteriza-de-fo",
+   "title": "Jaca lidera el proyecto europeo FORTIUM para crear una red transfronteriza de fortificaciones del Pirineo",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2026-07-20/pleno-ordinario-21-de-julio.html",
+   "title": "Pleno ordinario 21 de julio",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2026-07-30/bandos-baros-y-badaguas.html",
+   "title": "Bandos Barós y Badaguás",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2026-08-21/comunicado-oficial-del-ayuntamiento-de-jaca.html",
+   "title": "Comunicado oficial del Ayuntamiento de Jaca",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2026-08-26/el-ayuntamiento-de-jaca-inicia-la-consulta-publica-para-modificar-la-ordenanza-d",
+   "title": "El Ayuntamiento de Jaca inicia la consulta pública para modificar la ordenanza de viviendas municipales en alquiler",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/noticias/2026-09-21/pleno-ordinario-22-de-septiembre.html",
+   "title": "Pleno ordinario 22 de septiembre",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/oficina.html",
+   "title": "Oficina de Turismo",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/perfil-de-contratante.html-0",
+   "title": "Perfil de Contratante",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/plaza-biscos.html",
+   "title": "PROYECTO DE RECUALIFICACIÓN DE LA PLAZA BISCÓS. PARTICIPA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/presupuestos-participativos.html",
+   "title": "PRESUPUESTOS PARTICIPATIVOS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/re-activa",
+   "title": "Jaca Re-Activa: Emprendiendo el cambio",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/recarga-electrica-de-vehiculos.html",
+   "title": "Recarga eléctrica de vehículos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/sendero-de-los-miradores.html",
+   "title": "Sendero de los Miradores",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/trabaja-con-nosotros.html",
+   "title": "Trabaja con nosotros",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo.html",
+   "title": "Turismo",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/agenda.html",
+   "title": "Agenda",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/congresos.html",
+   "title": "Jaca, Ciudad de Congresos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/deportes.html",
+   "title": "Deportes",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/deportes.html?page=1",
+   "title": "Deportes",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/deportes/agua.html",
+   "title": "Agua",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/deportes/candanchu-y-astun.html",
+   "title": "CANDANCHÚ Y ASTÚN",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/deportes/canones-y-barrancos.html",
+   "title": "Cañones y barrancos",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/deportes/caza.html",
+   "title": "Caza",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/deportes/deportes-de-aventura.html",
+   "title": "DEPORTES  DE AVENTURA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/espacio.html",
+   "title": "Espacio Rural",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/espacio.html?page=1",
+   "title": "Espacio Rural",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/espacio/abay.html",
+   "title": "Abay",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/espacio/abay.html-0",
+   "title": "Abay",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/espacio/abena-y-leres.html",
+   "title": "Abena y Lerés",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/espacio/abena.html",
+   "title": "Abena",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/espacio/los-pueblos-de-jaca.html",
+   "title": "LOS PUEBLOS DE JACA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/gastronomia.html",
+   "title": "Gastronomía",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/gastronomia.html?page=1",
+   "title": "Gastronomía",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/gastronomia/1000-miglia.html",
+   "title": "1000 MIGLIA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/gastronomia/19-tapas-y-500-vinos.html",
+   "title": "19 TAPAS Y 500 VINOS",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/gastronomia/acebo.html",
+   "title": "ACEBO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/gastronomia/la-cultura-del-tapeo.html",
+   "title": "La cultura del tapeo",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/gastronomia/pastelerias.html",
+   "title": "Pastelerías",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/modernismo.html",
+   "title": "Jaca modernista",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/monumentosymuseos.html",
+   "title": "Monumentos / Museos / Ecomuseo",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/monumentosymuseos.html?page=1",
+   "title": "Monumentos / Museos / Ecomuseo",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/monumentosymuseos/ayuntamiento.html",
+   "title": "Ayuntamiento",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/monumentosymuseos/ermita-de-la-victoria.html",
+   "title": "Ermita de la Victoria",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/monumentosymuseos/ermita-de-sarsa.html",
+   "title": "Ermita de Sarsa",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/monumentosymuseos/iglesia-de-ntra-sra-del-carmen.html",
+   "title": "Iglesia de Ntra. Sra. del Carmen",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/monumentosymuseos/iglesia-de-santiago.html",
+   "title": "Iglesia de Santiago",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/naturaleza.html",
+   "title": "Naturaleza",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/naturaleza.html?page=1",
+   "title": "Naturaleza",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/naturaleza/excursiones-por-los-alrededores.html",
+   "title": "EXCURSIONES POR LOS ALREDEDORES",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/naturaleza/fauna-y-flora.html",
+   "title": "Fauna y Flora",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/naturaleza/la-botanica-en-la-jacetania.html",
+   "title": "LA BOTÁNICA EN LA JACETANIA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/naturaleza/las-migraciones.html",
+   "title": "Las Migraciones",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/naturaleza/las-rapaces.html",
+   "title": "Las rapaces",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/noticias.html",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/noticias.html?page=1",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/noticias.html?page=2",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/noticias.html?page=3",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/noticias.html?page=4",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/noticias.html?page=5",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/noticias.html?page=6",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/noticias.html?page=7",
+   "title": "Noticias",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/ocio.html",
+   "title": "Ocio nocturno",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/ocio.html?page=1",
+   "title": "Ocio nocturno",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/ocio/alfin.html",
+   "title": "ALFIN",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/ocio/arlekyn.html",
+   "title": "ARLEKYN",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/ocio/cachito.html",
+   "title": "CACHITO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/ocio/cafe.html",
+   "title": "CAFÉ",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/ocio/dublin-road.html",
+   "title": "DUBLIN ROAD",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/romanico.html",
+   "title": "Románico",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/romanico.html?page=1",
+   "title": "Románico",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/romanico/el-romanico-en-la-jacetania.html",
+   "title": "EL ROMÁNICO EN LA JACETANIA",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/romanico/ermita-de-san-adrian-de-sasabe.html",
+   "title": "ERMITA DE SAN ADRIÁN DE SASABE",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/romanico/ermita-de-sarsa.html",
+   "title": "Ermita de Sarsa",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/romanico/iglesia-de-san-adrian-de-guasillo.html",
+   "title": "IGLESIA DE SAN ADRIÁN DE GUASILLO",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/romanico/iglesia-de-san-andres-de-abay-s-xii-al-xviii.html",
+   "title": "IGLESIA DE SAN ANDRÉS DE ABAY  (S. XII al XVIII)",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/viaje.html",
+   "title": "Planifica tu viaje",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/viaje/donde-comer.html",
+   "title": "¿Dónde comer?",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/viaje/donde-comprar.html",
+   "title": "¿Dónde comprar?",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/viaje/dormir.html",
+   "title": "¿Dónde dormir?",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/viaje/telefonos.html",
+   "title": "Teléfonos de interés",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/viaje/transportes.html",
+   "title": "Transportes: ¿Cómo llegar?",
+   "status": 200
+  },
+  {
+   "url": "https://www.jaca.es/turismo/viaje/ubicacion.html",
+   "title": "Ubicación",
+   "status": 200
+  }
+ ]
+}
