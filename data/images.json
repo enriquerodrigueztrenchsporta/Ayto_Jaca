@@ -1,0 +1,90 @@
+[
+  {
+    "key": "hero-oroel",
+    "file": "/images/hero-oroel.jpg",
+    "title": "File:Jaca a los pies de la peña Oroel.JPG",
+    "width": 2000,
+    "height": 1225,
+    "author": "Elemaki",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jaca_a_los_pies_de_la_pe%C3%B1a_Oroel.JPG"
+  },
+  {
+    "key": "ciudadela",
+    "file": "/images/ciudadela.jpg",
+    "title": "File:Ciudadela Jaca Vista Aerea.JPG",
+    "width": 1400,
+    "height": 1050,
+    "author": "Juan Carlos Gil",
+    "license": "CC BY-SA 3.0 es",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/es/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ciudadela_Jaca_Vista_Aerea.JPG"
+  },
+  {
+    "key": "crismon",
+    "file": "/images/crismon.jpg",
+    "title": "File:Crismón de Jaca (Catedral de Jaca, Huesca).jpg",
+    "width": 1400,
+    "height": 1050,
+    "author": "Jl FilpoC",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Crism%C3%B3n_de_Jaca_(Catedral_de_Jaca,_Huesca).jpg"
+  },
+  {
+    "key": "puente-san-miguel",
+    "file": "/images/puente-san-miguel.jpg",
+    "title": "File:Puente de San Miguel de Jaca. 3.jpg",
+    "width": 1400,
+    "height": 1400,
+    "author": "Lozano Manzanedo",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puente_de_San_Miguel_de_Jaca._3.jpg"
+  },
+  {
+    "key": "calle-mayor",
+    "file": "/images/calle-mayor.jpg",
+    "title": "File:Jaca - Calle Mayor 32.jpg",
+    "width": 1000,
+    "height": 2098,
+    "author": "Ecelan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jaca_-_Calle_Mayor_32.jpg"
+  },
+  {
+    "key": "vista-oroel",
+    "file": "/images/vista-oroel.jpg",
+    "title": "File:Jaca, view from Peña Oroel (1769m) 1.jpg",
+    "width": 1600,
+    "height": 1039,
+    "author": "AndyScott",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jaca,_view_from_Pe%C3%B1a_Oroel_(1769m)_1.jpg"
+  },
+  {
+    "key": "badaguas",
+    "file": "/images/badaguas.jpg",
+    "title": "File:Badaguás . Peña Oroel. Jaca. Huesca. España.jpg",
+    "width": 1400,
+    "height": 979,
+    "author": "Lozano Manzanedo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Badagu%C3%A1s_._Pe%C3%B1a_Oroel._Jaca._Huesca._Espa%C3%B1a.jpg"
+  },
+  {
+    "key": "catedral-portico",
+    "file": "/images/catedral-portico.jpg",
+    "title": "File:Pórtico de la portada sur (Catedral de Jaca).jpg",
+    "width": 1200,
+    "height": 1200,
+    "author": "Jl FilpoC",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:P%C3%B3rtico_de_la_portada_sur_(Catedral_de_Jaca).jpg"
+  }
+]

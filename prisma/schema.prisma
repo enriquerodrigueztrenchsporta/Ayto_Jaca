@@ -1,0 +1,576 @@
+// Modelo de datos — Propuesta web Ayuntamiento de Jaca
+// Prisma 7 + PostgreSQL. La URL de conexión se define en prisma.config.ts.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ──────────────────────────────────────────────────────────────
+// Enumeraciones
+// ──────────────────────────────────────────────────────────────
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+enum PublicationStatus {
+  DRAFT
+  SCHEDULED
+  PUBLISHED
+  ARCHIVED
+}
+
+enum AlertPriority {
+  NORMAL
+  IMPORTANT
+  URGENT
+}
+
+enum AlertKind {
+  GENERAL
+  CORTE
+  OBRA
+  MOVILIDAD
+  BANDO
+  PLAZO
+  CIERRE
+  SERVICIO
+}
+
+enum GrantStatus {
+  UPCOMING
+  OPEN
+  CLOSED
+  AWARDED
+}
+
+enum JobStatus {
+  UPCOMING
+  OPEN
+  IN_PROGRESS
+  CLOSED
+}
+
+enum SessionType {
+  ORDINARIA
+  EXTRAORDINARIA
+  URGENTE
+  JUNTA_GOBIERNO
+  COMISION
+  OTRA
+}
+
+enum Recurrence {
+  NONE
+  DAILY
+  WEEKLY
+  MONTHLY
+}
+
+enum CategoryScope {
+  NEWS
+  EVENT
+  PROCEDURE
+  DOCUMENT
+  PAGE
+}
+
+enum DocumentKind {
+  PDF
+  DOC
+  SPREADSHEET
+  IMAGE
+  LINK
+  OTHER
+}
+
+enum FeaturedKind {
+  BANNER
+  HIGHLIGHT
+}
+
+enum WeeklyUpdateStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum AuditAction {
+  CREATE
+  UPDATE
+  PUBLISH
+  SCHEDULE
+  ARCHIVE
+  RESTORE
+  DELETE
+  LOGIN
+  LOGIN_FAILED
+  WEEKLY_SAVE
+  WEEKLY_PUBLISH
+  UPLOAD
+  VERIFY
+  SETTINGS
+}
+
+// ──────────────────────────────────────────────────────────────
+// Usuarios y auditoría
+// ──────────────────────────────────────────────────────────────
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  role         Role      @default(EDITOR)
+  active       Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  auditLogs     AuditLog[]
+  weeklyUpdates WeeklyUpdate[] @relation("WeeklyCreatedBy")
+  media         Media[]
+}
+
+model AuditLog {
+  id          String      @id @default(cuid())
+  createdAt   DateTime    @default(now())
+  userId      String?
+  user        User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userEmail   String?
+  action      AuditAction
+  entityType  String
+  entityId    String?
+  entityTitle String?
+  details     Json?
+
+  @@index([createdAt])
+  @@index([entityType, entityId])
+}
+
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+// ──────────────────────────────────────────────────────────────
+// Organización municipal
+// ──────────────────────────────────────────────────────────────
+
+model Area {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  name           String
+  description    String?
+  phone          String?
+  email          String?
+  address        String?
+  schedule       String?
+  mapUrl         String?
+  webUrl         String?
+  sortOrder      Int       @default(0)
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  pendingFields  String[]  @default([])
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  procedures Procedure[]
+  alerts     Alert[]
+  grants     Grant[]
+  jobs       PublicJob[]
+  pages      Page[]
+}
+
+model Category {
+  id        String        @id @default(cuid())
+  slug      String
+  name      String
+  scope     CategoryScope
+  sortOrder Int           @default(0)
+
+  news       News[]
+  events     Event[]
+  procedures Procedure[]
+  documents  Document[]
+
+  @@unique([scope, slug])
+}
+
+// ──────────────────────────────────────────────────────────────
+// Medios y documentos
+// ──────────────────────────────────────────────────────────────
+
+model Media {
+  id           String   @id @default(cuid())
+  filename     String
+  url          String
+  mimeType     String
+  size         Int
+  width        Int?
+  height       Int?
+  alt          String   @default("")
+  credit       String?
+  license      String?
+  sourceUrl    String?
+  createdAt    DateTime @default(now())
+  uploadedById String?
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+
+  news     News[]
+  events   Event[]
+  pages    Page[]
+  featured FeaturedContent[]
+}
+
+model Document {
+  id             String       @id @default(cuid())
+  title          String
+  description    String?
+  kind           DocumentKind @default(PDF)
+  url            String
+  isExternal     Boolean      @default(true)
+  fileSize       Int?
+  mimeType       String?
+  documentDate   DateTime?
+  categoryId     String?
+  category       Category?    @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String       @default("")
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  news       News[]
+  procedures Procedure[]
+  sessions   MunicipalSession[]
+  grants     Grant[]
+  jobs       PublicJob[]
+  pages      Page[]
+  alerts     Alert[]
+
+  @@index([categoryId])
+}
+
+// ──────────────────────────────────────────────────────────────
+// Contenidos publicables
+// Campos comunes: status, publishAt, expiresAt, fuente y verificación.
+// ──────────────────────────────────────────────────────────────
+
+model Page {
+  id             String            @id @default(cuid())
+  path           String            @unique
+  section        String
+  title          String
+  summary        String?
+  body           String            @default("")
+  imageId        String?
+  image          Media?            @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  areaId         String?
+  area           Area?             @relation(fields: [areaId], references: [id], onDelete: SetNull)
+  sortOrder      Int               @default(0)
+  status         PublicationStatus @default(DRAFT)
+  publishAt      DateTime?
+  expiresAt      DateTime?
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String            @default("")
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  documents Document[]
+
+  @@index([section, status])
+}
+
+model News {
+  id             String            @id @default(cuid())
+  slug           String            @unique
+  title          String
+  excerpt        String
+  body           String            @default("")
+  categoryId     String?
+  category       Category?         @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  imageId        String?
+  image          Media?            @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  imageAlt       String?
+  date           DateTime
+  author         String?
+  links          Json?
+  featured       Boolean           @default(false)
+  isDemo         Boolean           @default(false)
+  status         PublicationStatus @default(DRAFT)
+  publishAt      DateTime?
+  expiresAt      DateTime?
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String            @default("")
+  weeklyUpdateId String?
+  weeklyUpdate   WeeklyUpdate?     @relation(fields: [weeklyUpdateId], references: [id], onDelete: SetNull)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  documents Document[]
+
+  @@index([status, date])
+}
+
+model Event {
+  id             String            @id @default(cuid())
+  slug           String            @unique
+  title          String
+  description    String            @default("")
+  startDate      DateTime
+  endDate        DateTime?
+  timeText       String?
+  location       String?
+  address        String?
+  categoryId     String?
+  category       Category?         @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  organizer      String?
+  price          String?
+  bookingUrl     String?
+  url            String?
+  imageId        String?
+  image          Media?            @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  imageAlt       String?
+  featured       Boolean           @default(false)
+  recurrence     Recurrence        @default(NONE)
+  recurrenceEnd  DateTime?
+  isDemo         Boolean           @default(false)
+  status         PublicationStatus @default(DRAFT)
+  publishAt      DateTime?
+  expiresAt      DateTime?
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String            @default("")
+  weeklyUpdateId String?
+  weeklyUpdate   WeeklyUpdate?     @relation(fields: [weeklyUpdateId], references: [id], onDelete: SetNull)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  @@index([status, startDate])
+}
+
+model Alert {
+  id             String            @id @default(cuid())
+  title          String
+  summary        String
+  body           String?
+  priority       AlertPriority     @default(NORMAL)
+  kind           AlertKind         @default(GENERAL)
+  startsAt       DateTime
+  endsAt         DateTime?
+  url            String?
+  areaId         String?
+  area           Area?             @relation(fields: [areaId], references: [id], onDelete: SetNull)
+  showOnHome     Boolean           @default(true)
+  zone           String?
+  affectation    String?
+  alternative    String?
+  mapUrl         String?
+  isDemo         Boolean           @default(false)
+  status         PublicationStatus @default(DRAFT)
+  publishAt      DateTime?
+  expiresAt      DateTime?
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String            @default("")
+  weeklyUpdateId String?
+  weeklyUpdate   WeeklyUpdate?     @relation(fields: [weeklyUpdateId], references: [id], onDelete: SetNull)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  documents Document[]
+
+  @@index([status, startsAt])
+}
+
+model Grant {
+  id             String            @id @default(cuid())
+  slug           String            @unique
+  title          String
+  grantStatus    GrantStatus       @default(OPEN)
+  openingDate    DateTime?
+  deadline       DateTime?
+  deadlineText   String?
+  beneficiaries  String?
+  summary        String
+  body           String?
+  officialUrl    String?
+  sedeUrl        String?
+  areaId         String?
+  area           Area?             @relation(fields: [areaId], references: [id], onDelete: SetNull)
+  isDemo         Boolean           @default(false)
+  status         PublicationStatus @default(DRAFT)
+  publishAt      DateTime?
+  expiresAt      DateTime?
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String            @default("")
+  weeklyUpdateId String?
+  weeklyUpdate   WeeklyUpdate?     @relation(fields: [weeklyUpdateId], references: [id], onDelete: SetNull)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  documents Document[]
+
+  @@index([status, grantStatus])
+}
+
+model PublicJob {
+  id             String            @id @default(cuid())
+  slug           String            @unique
+  title          String
+  jobStatus      JobStatus         @default(OPEN)
+  staffType      String?
+  positions      Int?
+  openingDate    DateTime?
+  deadline       DateTime?
+  summary        String
+  body           String?
+  officialUrl    String?
+  areaId         String?
+  area           Area?             @relation(fields: [areaId], references: [id], onDelete: SetNull)
+  isDemo         Boolean           @default(false)
+  status         PublicationStatus @default(DRAFT)
+  publishAt      DateTime?
+  expiresAt      DateTime?
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String            @default("")
+  weeklyUpdateId String?
+  weeklyUpdate   WeeklyUpdate?     @relation(fields: [weeklyUpdateId], references: [id], onDelete: SetNull)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  documents Document[]
+
+  @@index([status, jobStatus])
+}
+
+model MunicipalSession {
+  id             String            @id @default(cuid())
+  slug           String            @unique
+  title          String
+  sessionType    SessionType       @default(ORDINARIA)
+  date           DateTime
+  timeText       String?
+  location       String?
+  streamingUrl   String?
+  agenda         String?
+  isDemo         Boolean           @default(false)
+  status         PublicationStatus @default(DRAFT)
+  publishAt      DateTime?
+  expiresAt      DateTime?
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String            @default("")
+  weeklyUpdateId String?
+  weeklyUpdate   WeeklyUpdate?     @relation(fields: [weeklyUpdateId], references: [id], onDelete: SetNull)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  documents Document[]
+
+  @@index([status, date])
+}
+
+model Procedure {
+  id             String            @id @default(cuid())
+  slug           String            @unique
+  title          String
+  summary        String
+  description    String?
+  whoCanApply    String?
+  requirements   String?
+  documentation  String?
+  deadline       String?
+  cost           String?
+  howToApply     String?
+  inPerson       String?
+  online         Boolean           @default(true)
+  requiresCertificate Boolean      @default(false)
+  sedeUrl        String?
+  keywords       String[]          @default([])
+  categoryId     String?
+  category       Category?         @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  areaId         String?
+  area           Area?             @relation(fields: [areaId], references: [id], onDelete: SetNull)
+  contact        String?
+  featured       Boolean           @default(false)
+  sortOrder      Int               @default(0)
+  status         PublicationStatus @default(DRAFT)
+  publishAt      DateTime?
+  expiresAt      DateTime?
+  sourceUrl      String?
+  sourceName     String?
+  lastVerifiedAt DateTime?
+  searchText     String            @default("")
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  documents Document[]
+
+  @@index([status, featured])
+}
+
+model FeaturedContent {
+  id          String            @id @default(cuid())
+  title       String
+  description String?
+  url         String
+  kind        FeaturedKind      @default(HIGHLIGHT)
+  imageId     String?
+  image       Media?            @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  imageAlt    String?
+  position    Int               @default(0)
+  status      PublicationStatus @default(DRAFT)
+  publishAt   DateTime?
+  expiresAt   DateTime?
+  sourceUrl   String?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+}
+
+// ──────────────────────────────────────────────────────────────
+// Actualización semanal
+// ──────────────────────────────────────────────────────────────
+
+model WeeklyUpdate {
+  id            String             @id @default(cuid())
+  weekStart     DateTime
+  weekLabel     String
+  updateDate    DateTime
+  notes         String?
+  checklist     Json?
+  payload       Json?
+  status        WeeklyUpdateStatus @default(DRAFT)
+  publishedAt   DateTime?
+  createdById   String?
+  createdBy     User?              @relation("WeeklyCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+
+  news     News[]
+  events   Event[]
+  alerts   Alert[]
+  grants   Grant[]
+  jobs     PublicJob[]
+  sessions MunicipalSession[]
+}

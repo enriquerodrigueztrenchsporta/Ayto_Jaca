@@ -1,0 +1,475 @@
+/**
+ * Catálogo de trámites.
+ * - Fichas con `sedeId`: descripción y requisitos proceden de la Sede Electrónica oficial
+ *   (https://jaca.sedipualba.es/catalogoservicios.aspx, consulta 30/09/2026 → data/source/sede-tramites.json).
+ * - Fichas sin `sedeId`: proceden de los impresos oficiales publicados en jaca.es.
+ * Los textos se han reescrito en lenguaje claro sin añadir requisitos, plazos ni costes no publicados.
+ */
+export type ProcedureSeed = {
+  slug: string;
+  title: string;
+  summary: string;
+  category: string;
+  area: string;
+  sedeId?: number;
+  keywords: string[];
+  featured?: boolean;
+  whoCanApply?: string;
+  documentation?: string;
+  deadline?: string;
+  cost?: string;
+  howToApply?: string;
+  description?: string;
+  online?: boolean;
+  documents?: Array<{ title: string; url: string }>;
+  sourceUrl?: string;
+};
+
+export const PROCEDURE_CATEGORIES = [
+  { slug: "padron-y-certificados", name: "Padrón y certificados" },
+  { slug: "registro-e-instancias", name: "Registro e instancias" },
+  { slug: "urbanismo-y-obras", name: "Urbanismo y obras" },
+  { slug: "actividades-y-comercio", name: "Actividades y comercio" },
+  { slug: "tributos-y-pagos", name: "Tributos y pagos" },
+  { slug: "via-publica", name: "Vía pública y espacios" },
+  { slug: "cementerio", name: "Cementerio" },
+  { slug: "seguridad-y-trafico", name: "Seguridad y tráfico" },
+  { slug: "ayudas-y-subvenciones", name: "Ayudas y subvenciones" },
+  { slug: "derechos-y-transparencia", name: "Derechos, quejas y transparencia" },
+  { slug: "proveedores", name: "Empresas y proveedores" },
+];
+
+const F = "https://www.jaca.es/sites/default/files/";
+
+export const PROCEDURES: ProcedureSeed[] = [
+  // ─── Padrón ────────────────────────────────────────────────
+  {
+    slug: "alta-en-el-padron",
+    title: "Alta en el padrón municipal (empadronarse)",
+    summary: "Inscríbete en el padrón de Jaca por cambio de residencia, nacimiento u omisión.",
+    category: "padron-y-certificados",
+    area: "atencion-ciudadana",
+    sedeId: 28441,
+    keywords: ["empadronarme", "empadronamiento", "padron", "mudanza", "cambio de domicilio", "nacimiento", "vivir en jaca"],
+    featured: true,
+    whoCanApply: "Personas físicas que residan en el municipio, directamente o representadas por otra persona física.",
+    documentation:
+      "- Anexo III de solicitud de alta en el padrón, cumplimentado.\n- DNI, NIE o pasaporte en vigor.\n- Libro de familia, en el caso de personas menores de edad.\n- Título que acredite el uso de la vivienda: escritura de propiedad, contrato de alquiler, autorización de la persona propietaria, etc.",
+  },
+  {
+    slug: "certificado-de-empadronamiento",
+    title: "Certificado o volante de empadronamiento",
+    summary: "Solicita el documento que acredita tu inscripción en el padrón municipal.",
+    category: "padron-y-certificados",
+    area: "atencion-ciudadana",
+    sedeId: 29399,
+    keywords: ["certificado de empadronamiento", "volante", "padron", "acreditar domicilio", "residencia"],
+    featured: true,
+    whoCanApply: "La persona empadronada o su representante legal o voluntario.",
+    documentation: "Si lo solicita otra persona en su nombre: modelo de autorización para la solicitud de certificados o volantes padronales.",
+    documents: [{ title: "Modelo de autorización para solicitar certificados y volantes padronales", url: F + "autorizacion_para_la_solicitud_de_certificados_volantes_padronales.pdf" }],
+  },
+  {
+    slug: "solicitud-de-certificado-o-informe",
+    title: "Solicitud de certificado o informe",
+    summary: "Pide al Ayuntamiento un certificado o informe sobre un expediente o dato municipal.",
+    category: "padron-y-certificados",
+    area: "atencion-ciudadana",
+    sedeId: 28446,
+    keywords: ["certificado", "informe", "acreditacion"],
+  },
+  {
+    slug: "comunicacion-de-datos-para-notificaciones",
+    title: "Comunicar datos para recibir notificaciones",
+    summary: "Indica al Ayuntamiento el medio y la dirección donde quieres recibir notificaciones.",
+    category: "registro-e-instancias",
+    area: "atencion-ciudadana",
+    sedeId: 28439,
+    keywords: ["notificaciones", "direccion electronica", "email", "comunicaciones"],
+  },
+  // ─── Registro ──────────────────────────────────────────────
+  {
+    slug: "instancia-general",
+    title: "Instancia general",
+    summary: "Presenta cualquier solicitud, escrito o documentación dirigida al Ayuntamiento que no tenga un trámite específico.",
+    category: "registro-e-instancias",
+    area: "atencion-ciudadana",
+    sedeId: 28434,
+    keywords: ["instancia", "presentar una instancia", "solicitud", "escrito", "registro", "presentar documentos"],
+    featured: true,
+    whoCanApply: "Personas físicas y jurídicas, directamente o mediante representante.",
+    documents: [{ title: "Modelo de instancia general", url: F + "instancia_general_0.pdf" }],
+  },
+  {
+    slug: "alegaciones-y-recursos",
+    title: "Alegaciones y recursos (Secretaría General)",
+    summary: "Presenta alegaciones o recursos administrativos frente a actos del Ayuntamiento del área de Secretaría General.",
+    category: "registro-e-instancias",
+    area: "atencion-ciudadana",
+    sedeId: 29437,
+    keywords: ["recurso", "alegacion", "reposicion", "impugnar"],
+    documentation:
+      "- Breve descripción de la alegación o recurso.\n- Documento del recurso en formato no editable, si procede.\n- Documentación anexa.\n\nNormativa: artículos 82, 83, 112 y siguientes de la Ley 39/2015, del Procedimiento Administrativo Común.",
+  },
+  // ─── Urbanismo ─────────────────────────────────────────────
+  {
+    slug: "comunicacion-previa-obras-menores",
+    title: "Comunicación previa de obras menores",
+    summary: "Comunica al Ayuntamiento pequeñas obras de reparación, decoración u ornato que no requieren proyecto técnico.",
+    category: "urbanismo-y-obras",
+    area: "urbanismo",
+    sedeId: 30367,
+    keywords: ["obra menor", "reforma", "licencia de obra", "pintar fachada", "cambiar suelo", "reparacion", "declaracion responsable urbanistica"],
+    featured: true,
+    description:
+      "Están sujetas a comunicación previa las obras menores de sencillez técnica y escasa entidad constructiva y económica: pequeñas reparaciones, decoración, ornato o cerramiento que no precisen proyecto técnico ni presupuesto elevado (enlucidos, pavimentación, revocos interiores, azoteas, terminaciones de fachada o elementos puntuales de urbanización). En ningún caso pueden alterar el volumen, la superficie construida ni el uso permitido.",
+    cost: "Sujeta a las ordenanzas fiscales n.º 1 y n.º 11 (ICIO). Consulte el importe en las ordenanzas enlazadas en la Sede.",
+    documents: [{ title: "Impreso de comunicación previa de obras menores", url: F + "comunicacion_previa_obras_menores_0.doc" }],
+  },
+  {
+    slug: "licencia-urbanistica",
+    title: "Licencia o autorización urbanística (obra mayor)",
+    summary: "Solicita licencia para obras mayores u otras actuaciones urbanísticas que requieren autorización municipal.",
+    category: "urbanismo-y-obras",
+    area: "urbanismo",
+    sedeId: 28435,
+    keywords: ["licencia de obra", "obra mayor", "construir", "ampliacion", "rehabilitacion", "licencia urbanistica"],
+    featured: true,
+    documents: [{ title: "Solicitud de licencia de obras mayores", url: F + "solicitud_licencia_de_obras_mayores.doc" }],
+  },
+  {
+    slug: "primera-ocupacion-de-vivienda",
+    title: "Declaración responsable de primera ocupación de vivienda",
+    summary: "Declara la primera ocupación de una vivienda nueva o rehabilitada tras finalizar la obra.",
+    category: "urbanismo-y-obras",
+    area: "urbanismo",
+    keywords: ["primera ocupacion", "vivienda nueva", "cedula", "fin de obra"],
+    howToApply: "Descargue el impreso oficial y preséntelo en el Registro del Ayuntamiento o mediante la declaración responsable en materia urbanística de la Sede Electrónica.",
+    online: true,
+    documents: [{ title: "Impreso de declaración responsable de primera ocupación", url: F + "declaracion_responsable_primera_ocupacion_vivienda.doc" }],
+    sourceUrl: "https://www.jaca.es/ayuntamiento/impresos-y-solicitudes.html",
+  },
+  {
+    slug: "vertido-aguas-residuales",
+    title: "Autorización de vertido de aguas residuales asimilables a domésticas",
+    summary: "Solicita autorización para verter a la red municipal aguas residuales asimilables a domésticas.",
+    category: "urbanismo-y-obras",
+    area: "urbanismo",
+    keywords: ["vertido", "aguas residuales", "alcantarillado", "saneamiento"],
+    howToApply: "Descargue el impreso oficial y preséntelo en el Registro del Ayuntamiento o mediante la Instancia general de la Sede Electrónica.",
+    online: true,
+    documents: [{ title: "Solicitud de autorización de vertido", url: F + "solicitud_autorizacion_vertido_aguas_residuales_domesticas_0.doc" }],
+    sourceUrl: "https://www.jaca.es/ayuntamiento/impresos-y-solicitudes.html",
+  },
+  // ─── Actividades ───────────────────────────────────────────
+  {
+    slug: "licencia-de-actividad",
+    title: "Licencia de actividad",
+    summary: "Solicita la licencia para iniciar una actividad económica que la requiera (incluida la licencia ambiental de actividad clasificada).",
+    category: "actividades-y-comercio",
+    area: "urbanismo",
+    sedeId: 28442,
+    keywords: ["abrir un negocio", "licencia de apertura", "actividad clasificada", "licencia ambiental", "local"],
+    featured: true,
+    documents: [{ title: "Solicitud de licencia ambiental de actividad clasificada", url: F + "solicitud_licencia_ambiental_de_actividad_clasificada.doc" }],
+  },
+  {
+    slug: "declaracion-responsable-actividades",
+    title: "Declaración responsable o comunicación de actividad",
+    summary: "Comunica el inicio de actividades que no necesitan licencia previa (actividades inocuas).",
+    category: "actividades-y-comercio",
+    area: "urbanismo",
+    sedeId: 28449,
+    keywords: ["actividad inocua", "apertura", "declaracion responsable", "negocio", "tienda", "oficina"],
+    documents: [{ title: "Impreso de declaración responsable de inicio de actividad", url: F + "declaracion_responsable_apertura_de_actividad.doc" }],
+  },
+  {
+    slug: "cambio-de-titular-de-actividad",
+    title: "Cambio de titular de una actividad",
+    summary: "Comunica el traspaso de una actividad a una nueva persona titular. Debe firmarla la anterior y la nueva titularidad.",
+    category: "actividades-y-comercio",
+    area: "urbanismo",
+    sedeId: 29828,
+    keywords: ["traspaso", "cambio de titular", "negocio"],
+  },
+  {
+    slug: "actividad-ganadera",
+    title: "Actividad ganadera (licencia o declaración de ganadería doméstica)",
+    summary: "Solicita licencia de actividad ganadera o declara una actividad ganadera doméstica.",
+    category: "actividades-y-comercio",
+    area: "urbanismo",
+    keywords: ["ganaderia", "ganado", "animales de granja", "explotacion"],
+    howToApply: "Descargue el impreso correspondiente y preséntelo en el Registro del Ayuntamiento o mediante la Sede Electrónica.",
+    online: true,
+    documents: [
+      { title: "Solicitud de licencia de actividad ganadera", url: F + "solicitud_licencia_actividad_ganadera.doc" },
+      { title: "Declaración responsable de actividad ganadera doméstica", url: F + "declaracion_responsable_actividad_ganadera_domestica.doc" },
+    ],
+    sourceUrl: "https://www.jaca.es/ayuntamiento/impresos-y-solicitudes.html",
+  },
+  // ─── Tributos ──────────────────────────────────────────────
+  {
+    slug: "domiciliacion-de-recibos",
+    title: "Domiciliar recibos municipales",
+    summary: "Paga tus tributos municipales (IBI, agua, basuras…) por domiciliación bancaria.",
+    category: "tributos-y-pagos",
+    area: "hacienda",
+    sedeId: 28447,
+    keywords: ["pagar una tasa", "domiciliacion", "recibo", "pago", "banco", "cuenta", "ibi", "agua"],
+    featured: true,
+    documents: [{ title: "Carta de domiciliación bancaria", url: F + "carta_domiciliacion_0.docx" }],
+  },
+  {
+    slug: "bonificacion-ibi",
+    title: "Bonificación del IBI 2026",
+    summary: "Solicita las bonificaciones del Impuesto sobre Bienes Inmuebles previstas en la ordenanza fiscal.",
+    category: "tributos-y-pagos",
+    area: "hacienda",
+    keywords: ["bonificacion ibi", "descuento ibi", "impuesto bienes inmuebles", "familia numerosa", "autoconsumo", "alquiler"],
+    featured: true,
+    description:
+      "Las Ordenanzas Fiscales para 2026 refuerzan las bonificaciones del IBI por autoconsumo energético y por alquiler con renta limitada, e incorporan una exención para centros sanitarios públicos (acuerdo plenario de 21/10/2025). Los requisitos exactos figuran en la Ordenanza Fiscal n.º 9.",
+    howToApply: "Descargue el modelo oficial de solicitud y preséntelo en el Registro del Ayuntamiento o mediante la Instancia general de la Sede Electrónica.",
+    online: true,
+    documents: [
+      { title: "Modelo de solicitud de bonificación del IBI 2026", url: F + "solicitud_bonificacion_ibi.pdf" },
+    ],
+    sourceUrl: "https://www.jaca.es/ayuntamiento/impresos-y-solicitudes.html",
+  },
+  {
+    slug: "bonificacion-tasas-agua-padron-multiple",
+    title: "Bonificación de tasas de agua y padrón múltiple 2026",
+    summary: "Solicita las bonificaciones en las tasas de agua y del padrón fiscal múltiple.",
+    category: "tributos-y-pagos",
+    area: "hacienda",
+    keywords: ["bonificacion agua", "tasa de basuras", "padron multiple", "descuento tasas"],
+    howToApply: "Descargue el modelo oficial de solicitud y preséntelo en el Registro del Ayuntamiento o mediante la Instancia general de la Sede Electrónica.",
+    online: true,
+    documents: [{ title: "Modelo de solicitud de bonificación de tasas 2026", url: F + "tasas_solicitud_-_modelo.pdf" }],
+    sourceUrl: "https://www.jaca.es/ayuntamiento/impresos-y-solicitudes.html",
+  },
+  {
+    slug: "plusvalia-iivtnu",
+    title: "Declaración de plusvalía (IIVTNU)",
+    summary: "Declara el Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Urbana tras una compraventa, herencia o donación.",
+    category: "tributos-y-pagos",
+    area: "hacienda",
+    keywords: ["plusvalia", "iivtnu", "herencia", "compraventa", "donacion", "vender piso"],
+    howToApply: "El modelo debe completarlo la persona declarante y presentarse en el Registro del Ayuntamiento (también puede presentarse por la Sede Electrónica mediante Instancia general).",
+    online: true,
+    documents: [
+      { title: "Declaración del IIVTNU", url: F + "declaracion_iivtnu_1.pdf" },
+      { title: "Autorización de representación para el IIVTNU", url: F + "representacion_iivtnu.pdf" },
+      { title: "Ordenanza Fiscal n.º 12", url: F + "of_no12_ano_2024.pdf" },
+      { title: "Métodos de cálculo del IIVTNU", url: F + "nota_informativa_calculo_iivtnu_2024.pdf" },
+    ],
+    sourceUrl: "https://www.jaca.es/ayuntamiento/tesoreria/declaracion-de-iivtnu-plusvalia.html",
+  },
+  {
+    slug: "devolucion-de-ingresos-indebidos",
+    title: "Devolución de ingresos indebidos",
+    summary: "Solicita la devolución de un importe pagado al Ayuntamiento de forma indebida o duplicada.",
+    category: "tributos-y-pagos",
+    area: "hacienda",
+    sedeId: 28450,
+    keywords: ["devolucion", "reembolso", "pago duplicado", "cobro indebido"],
+  },
+  // ─── Vía pública ───────────────────────────────────────────
+  {
+    slug: "ocupacion-via-publica-terrazas",
+    title: "Ocupación de vía pública con terrazas",
+    summary: "Solicitud anual de terraza para establecimientos hosteleros. Plazo: del 1 de octubre al 30 de diciembre del año anterior.",
+    category: "via-publica",
+    area: "atencion-ciudadana",
+    sedeId: 30600,
+    keywords: ["terraza", "veladores", "mesas y sillas", "hosteleria", "bar", "ocupacion de via publica"],
+    featured: true,
+    deadline:
+      "Del 1 de octubre al 30 de diciembre del año anterior a la ocupación (art. 5 de la ordenanza municipal reguladora). Fuera de plazo la solicitud se inadmite, salvo las excepciones de la propia ordenanza.",
+  },
+  {
+    slug: "ocupacion-via-publica-general",
+    title: "Ocupación de vía pública (general)",
+    summary: "Mesas informativas o recaudatorias, recogidas de firmas, stands o actuaciones callejeras sin instalaciones.",
+    category: "via-publica",
+    area: "atencion-ciudadana",
+    sedeId: 29428,
+    keywords: ["mesa informativa", "stand", "recogida de firmas", "musica en la calle", "ocupacion de via publica"],
+    cost: "Antes de iniciar el trámite debe cumplimentar y pagar una tasa (Ordenanza fiscal n.º 33).",
+  },
+  {
+    slug: "uso-de-espacio-publico",
+    title: "Solicitud de uso de un espacio público",
+    summary: "Solicita el uso de un espacio o instalación municipal para una actividad.",
+    category: "via-publica",
+    area: "atencion-ciudadana",
+    sedeId: 28445,
+    keywords: ["reservar sala", "espacio municipal", "evento", "uso de local"],
+  },
+  // ─── Cementerio ────────────────────────────────────────────
+  {
+    slug: "usos-funerarios",
+    title: "Autorización de usos funerarios (nichos, panteones, columbarios)",
+    summary: "Solicita autorización para usos funerarios en el cementerio municipal.",
+    category: "cementerio",
+    area: "atencion-ciudadana",
+    sedeId: 28443,
+    keywords: ["nicho", "cementerio", "defuncion", "entierro", "columbario", "panteon"],
+    documentation: "Formulario de solicitud y certificado de defunción.",
+  },
+  {
+    slug: "cambio-titularidad-derecho-funerario",
+    title: "Cambio de titularidad de derecho funerario",
+    summary: "Cambia la titularidad de un nicho, panteón o columbario.",
+    category: "cementerio",
+    area: "atencion-ciudadana",
+    sedeId: 28444,
+    keywords: ["titularidad nicho", "herencia nicho", "cementerio"],
+    documentation: "Formulario de solicitud y certificado de defunción.",
+  },
+  // ─── Seguridad ─────────────────────────────────────────────
+  {
+    slug: "atestados-de-trafico",
+    title: "Solicitud de atestados de tráfico (Policía Local)",
+    summary: "Solicita el número de atestado o la copia de un atestado de tráfico realizado por la Policía Local.",
+    category: "seguridad-y-trafico",
+    area: "policia-local",
+    sedeId: 29408,
+    keywords: ["accidente", "atestado", "seguro", "policia local", "parte"],
+  },
+  {
+    slug: "tarjeta-de-armas",
+    title: "Tarjeta de armas de 4.ª categoría (tipos A y B)",
+    summary: "Tarjeta necesaria para portar y usar fuera del domicilio carabinas y pistolas de aire comprimido de 4.ª categoría.",
+    category: "seguridad-y-trafico",
+    area: "atencion-ciudadana",
+    sedeId: 29419,
+    keywords: ["armas", "aire comprimido", "tarjeta de armas", "carabina"],
+  },
+  // ─── Ayudas ────────────────────────────────────────────────
+  {
+    slug: "subvenciones-bienestar-social",
+    title: "Subvenciones de Bienestar Social",
+    summary: "Tramitación de las subvenciones del Área de Bienestar Social: solicitud, justificación, subsanación y otras fases.",
+    category: "ayudas-y-subvenciones",
+    area: "bienestar-social",
+    sedeId: 29468,
+    keywords: ["subvencion", "ayuda social", "accion social", "asociaciones"],
+  },
+  {
+    slug: "subvenciones-partos-adopciones-multiples",
+    title: "Ayudas por partos o adopciones múltiples 2025-2026",
+    summary: "Subvención para familias con hijos o hijas nacidos de un mismo parto o de adopción múltiple. Plazo hasta el 30/11/2026.",
+    category: "ayudas-y-subvenciones",
+    area: "bienestar-social",
+    sedeId: 30373,
+    keywords: ["partos multiples", "gemelos", "mellizos", "adopcion", "familias", "ayuda"],
+    featured: true,
+    deadline: "Desde el 31/07/2026 hasta el 30/11/2026 (23:59 h).",
+  },
+  {
+    slug: "subvenciones-cultura",
+    title: "Subvenciones de Cultura",
+    summary: "Tramitación de las subvenciones del Área de Cultura en todas sus fases.",
+    category: "ayudas-y-subvenciones",
+    area: "cultura",
+    sedeId: 29410,
+    keywords: ["subvencion cultural", "asociaciones culturales", "actividades culturales"],
+  },
+  {
+    slug: "subvenciones-deportes",
+    title: "Subvenciones de Deportes",
+    summary: "Tramitación de las subvenciones del Área de Deportes en todas sus fases.",
+    category: "ayudas-y-subvenciones",
+    area: "deportes",
+    sedeId: 29409,
+    keywords: ["subvencion deportiva", "clubes", "deporte"],
+  },
+  {
+    slug: "subvenciones-escuela-de-musica",
+    title: "Subvenciones de la Escuela Municipal de Música",
+    summary: "Tramitación de las subvenciones y beneficios de la Escuela Municipal de Música.",
+    category: "ayudas-y-subvenciones",
+    area: "escuela-de-musica",
+    sedeId: 29411,
+    keywords: ["beca musica", "escuela de musica", "beneficios fiscales"],
+  },
+  // ─── Derechos ──────────────────────────────────────────────
+  {
+    slug: "reclamaciones-quejas-y-sugerencias",
+    title: "Reclamaciones, quejas y sugerencias",
+    summary: "Haz llegar al Ayuntamiento una queja, reclamación o sugerencia sobre los servicios municipales.",
+    category: "derechos-y-transparencia",
+    area: "atencion-ciudadana",
+    sedeId: 26221,
+    keywords: ["queja", "reclamacion", "sugerencia", "buzon"],
+    featured: true,
+  },
+  {
+    slug: "acceso-a-la-informacion-publica",
+    title: "Derecho de acceso a la información pública",
+    summary: "Solicita información pública en ejercicio del derecho de acceso previsto en la normativa de transparencia.",
+    category: "derechos-y-transparencia",
+    area: "atencion-ciudadana",
+    sedeId: 28454,
+    keywords: ["transparencia", "informacion publica", "solicitud de informacion"],
+  },
+  {
+    slug: "proteccion-de-datos",
+    title: "Ejercicio de derechos de protección de datos",
+    summary: "Ejerce tus derechos de acceso, rectificación, supresión, oposición y otros sobre tus datos personales.",
+    category: "derechos-y-transparencia",
+    area: "atencion-ciudadana",
+    sedeId: 28433,
+    keywords: ["proteccion de datos", "rgpd", "lopd", "derecho de acceso", "supresion"],
+  },
+  {
+    slug: "informacion-accesible-y-quejas",
+    title: "Solicitud de información accesible y quejas de accesibilidad",
+    summary: "Pide información en formato accesible o comunica incumplimientos de accesibilidad de webs y apps municipales (RD 1112/2018).",
+    category: "derechos-y-transparencia",
+    area: "atencion-ciudadana",
+    sedeId: 28437,
+    keywords: ["accesibilidad", "formato accesible", "discapacidad", "queja accesibilidad"],
+  },
+  {
+    slug: "reclamacion-unidad-de-accesibilidad",
+    title: "Reclamación ante la Unidad de Accesibilidad",
+    summary: "Presenta una reclamación ante la Unidad de Accesibilidad conforme al RD 1112/2018.",
+    category: "derechos-y-transparencia",
+    area: "atencion-ciudadana",
+    sedeId: 28438,
+    keywords: ["accesibilidad", "reclamacion accesibilidad"],
+  },
+  // ─── Proveedores ───────────────────────────────────────────
+  {
+    slug: "factura-electronica",
+    title: "Presentación de facturas electrónicas",
+    summary: "Cómo deben presentar sus facturas las empresas proveedoras del Ayuntamiento.",
+    category: "proveedores",
+    area: "hacienda",
+    sedeId: 28436,
+    keywords: ["factura electronica", "facturas", "proveedor", "face", "empresa"],
+    featured: true,
+    whoCanApply:
+      "Están obligadas a facturar electrónicamente las sociedades anónimas y limitadas, uniones temporales de empresas, personas jurídicas y entidades sin personalidad sin nacionalidad española, establecimientos permanentes de no residentes, agrupaciones de interés económico y determinados fondos.",
+    description:
+      "La obligación se aplica a facturas de más de 600 euros: el Ayuntamiento ha excluido reglamentariamente de esta obligación las facturas de menor cuantía.",
+    documents: [
+      { title: "Ordenanza reguladora de la factura electrónica del Ayuntamiento de Jaca", url: F + "ordenanza_reguladora_factura_electronica_del_ayuntamiento_de_jaca.pdf" },
+      { title: "Medios de presentación de facturas", url: F + "medios_de_presentacion_de_facturas.pdf" },
+    ],
+  },
+  {
+    slug: "ficha-de-terceros",
+    title: "Ficha de terceros (datos bancarios para cobros)",
+    summary: "Comunica los datos bancarios en los que el Ayuntamiento realizará pagos a personas o empresas.",
+    category: "proveedores",
+    area: "hacienda",
+    keywords: ["ficha de terceros", "datos bancarios", "cobrar", "proveedor", "subvencion"],
+    howToApply: "Descargue la ficha, cumpliméntela y preséntela en el Registro del Ayuntamiento o mediante la Instancia general de la Sede Electrónica.",
+    online: true,
+    documents: [{ title: "Ficha de terceros", url: F + "ficha_terceros_v.2_1.doc" }],
+    sourceUrl: "https://www.jaca.es/ayuntamiento/impresos-y-solicitudes.html",
+  },
+];
